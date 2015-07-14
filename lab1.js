@@ -43,8 +43,8 @@ function assert(expression, failureMessage) {
  Here are some examples for how to use the assert method:
 */
 
-assert(1 === 1, '1 equals 1 - this assert will pass.');
-assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.');
+//assert(1 === 1, '1 equals 1 - this assert will pass.');
+//assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.');
 
 /* ===========================================================================
 ------------------Assertions (8 points total)---------------------------------
@@ -56,9 +56,10 @@ assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.'
  zoo-themed.  Make one pass and one fail. In the failure message, describe why
  it failed.
 */
-
-//your code goes here
-
+var elephantAwesome = true;
+var penguinAwesome = true;
+assert(elephantAwesome === penguinAwesome, ' both are Boolean true - this assert will pass.');
+assert('PrairieDog100' === 101, 'this is an example of a failing assertion. A string is not strictly equal to an integer.');
 /* ========================================================================
 ----------------- Meerkats (20 points total)-------------------------------
 ===========================================================================
@@ -77,12 +78,28 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 // TODO: part #1: use a for loop to replace the words in sentence 1 with
 // 'chirp' (10 points)
 
-// your code goes here
+var myVar = sentence1.split(' ');
+sentence1 = '';
+
+for (var i = 1; i < myVar.length; i++)
+{
+  sentence1 += ('chirp' + ' ');
+}
+
+sentence1 += 'chirp.';
 
 // TODO: part #2: use a while or do-while loop to replace the words in sentence 2
 // with 'chirp' (10 points)
 
-// your code goes here
+var myVar = sentence2.split(' ');
+sentence2 = '';
+var i = 1;
+
+while (i < myVar.length) {
+  sentence2 += ('chirp' + ' ');
+  i++;
+}
+sentence2 += 'chirp.';
 
 // Leave these assertions as-is! If they pass, your code works.
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
@@ -104,7 +121,12 @@ var nextAnimal;
 // TODO: 12 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
-// your code goes here
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+var i = Math.floor(getRandomArbitrary(0, 4));
+var nextAnimal = favoriteAnimals[i];
 
 assert(nextAnimal, 'assign something to nextAnimal');
 
@@ -133,7 +155,23 @@ var tooHungryDay;
  meals)
 */
 
-// your code goes here
+var counter = 0;
+var avgMeals = 0;
+var mealsTotal = 0;
+// var avgMeals = 0;
+// var mealsTotal = 0;
+
+for (var i = 0; i < mealsPerDay.length; i++) {
+  mealsTotal += mealsPerDay[i];
+  avgMeals = mealsTotal / (i + 1);
+  console.log('Average number of meals per day is: ' + avgMeals);
+  if (avgMeals < 4) {
+    tooHungryDay = counter + 1;
+    console.log('Too Hungry Day was: Day ' + tooHungryDay +  'Beware, absent-minded caretaker!');
+    break;
+  }
+  counter++;
+}
 
 assert(tooHungryDay, 'remember to assign the answer to tooHungryDay');
 assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');
