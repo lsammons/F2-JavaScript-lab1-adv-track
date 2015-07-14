@@ -14,3 +14,22 @@ comments. Be sure to read everything. Run lab.js with `node lab1.js`.
 
 #### Resources and Collaborators
 
+LAURA SAMMONS -- PULL REQUEST:
+
+git remote -v
+origin  git@github.com:lsammons/F2-JavaScript-lab1-adv-track.git (fetch)
+origin  git@github.com:lsammons/F2-JavaScript-lab1-adv-track.git (push)
+
+
+LAURA SAMMONS -- RESOURCES USED:
+
+Used MDN to review Math functions -- chose a random number function from their page and modified it to use in the assignment.
+
+
+LAURA SAMMONS -- COLLABORATORS:
+
+Worked with Evan Paige to find a hack to get grunt to work on Mac OS X.  Using full path to grunt worked for us both.  (Regular "grunt" command from prompt does not work.)
+
+QUESTION:
+
+You say that when running jshints/jscs, we should fix all errors. But in the assignment, one of the assertions was supposed to fail (on purpose).  My jshints/jscs are catching this "error", but I didn't fix it (on purpose), because the assignment instructed to leave it as a fail. This was my interpretation of the assignment...
